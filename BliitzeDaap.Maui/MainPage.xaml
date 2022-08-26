@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI"
+             x:Class="BliitzeDaap.Maui.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Label Text="Ethereum Wallet" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+            <Frame CornerRadius="8" WidthRequest="300">
+                <VerticalStackLayout>
+                    <zxing:BarcodeGeneratorView x:Name="zxingbarcodeview" Format="QrCode" 
+                                                WidthRequest="200" HeightRequest="200" />
+                    <Label
+                x:Name="AccountaddressLb"
+                FontSize="14"
+                HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+           
+            <Label
+                x:Name="BalanceLb"
+                FontSize="18"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+           
+          
+                <Button ImageSource="launch1.png"
+                        BorderColor="Black"
+                        CornerRadius="8"
+                    BackgroundColor="White"
+                    x:Name="BtnDeployContract"
+                    Text="Deploy Contract"
+                        TextColor="Black"
+                    Clicked="BtnDeployContract_Clicked"                   
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                   
+          
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

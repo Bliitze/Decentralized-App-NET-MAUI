@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BliitzeDaap.Maui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BliitzeDaap.Maui"
+    xmlns:views="clr-namespace:BliitzeDaap.Maui.Views"
+    >
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <VerticalStackLayout BackgroundColor="White">
+                <Frame CornerRadius="8">
+                    <VerticalStackLayout>
+                        <Image
+                Margin="10,10,10,10"
+                       Source="ethereum.png"
+                       />
+                        
+                        <Label Text="Bliitze Decentralized App"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </Frame>
+               
+
+            </VerticalStackLayout>
+
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+  
+        <ShellContent
+        Title="Home"
+        Icon="Home.png"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+        
+        <ShellContent Title="Add Location"
+                      Icon="smartcontract.png"
+                      ContentTemplate="{DataTemplate views:AddLocationPage}" 
+                      Route="AddLocationPage"
+                      />
+        <ShellContent Title="Get All Locations"
+                      Icon="location.png"
+                      ContentTemplate="{DataTemplate views:MapPage}"
+                      
+                      />
+    <MenuItem x:Name="openBrowserbtn" Clicked="openBrowserbtn_Clicked" 
+              IconImageSource="blocks.png"
+              Text="View Account on Etherscan(Georli Test Network)"
+              >
+        
+    </MenuItem>
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Margin="20,10,10,20">
+            <Label 
+                    TextColor="Black"
+                       x:Name="ContractaddressLbETH"
+                     
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+    
+</Shell>

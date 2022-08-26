@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BliitzeDaap.Maui.ShellPage1"
+             xmlns:views="clr-namespace:BliitzeDaap.Maui.Views"
+             Title="ShellPage1">
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <VerticalStackLayout BackgroundColor="White"
+                  >
+                <Image Aspect="AspectFill"
+                       Source="decentralized.png"
+                       Opacity="0.6" />
+                <Label Text="Bliitze Decentralized App"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+                <Label 
+                       x:Name="AddressLb"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+                <Label 
+                       x:Name="BalanceLbETH"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <FlyoutItem FlyoutDisplayOptions="AsSingleItem">
+       
+        <!--
+        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
+        This is possible because a subclassed Shell object can only ever contain a FlyoutItem object or a TabBar object,
+        which can only ever contain Tab objects, which can only ever contain ShellContent objects.
+
+        The implicit conversion automatically wraps the ShellContent objects below in Tab objects.
+        -->
+        <ShellContent Title="Deploy Contract"
+                      Icon="launch.png"
+                      ContentTemplate="{DataTemplate views:DeployContractPage}" />
+        <ShellContent Title="Add Location"
+                      Icon="smart-contract.png"
+                      ContentTemplate="{DataTemplate views:AddLocationPage}" />
+        <ShellContent Title="Get All Locations"
+                      Icon="location.png"
+                      ContentTemplate="{DataTemplate views:MapPage}" />
+    </FlyoutItem>
+    
+</Shell>
